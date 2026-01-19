@@ -70,9 +70,9 @@ def update_difficulty_display(rank):
     difficulty_label.configure(text=f"Recommended Difficulty: {low}★ – {high}★")
 
 
-# =================================================
-# osu! API (guarded)
-# =================================================
+# ==================================================
+# osu! API
+# ==================================================
 
 
 def search_beatmaps(star_min, star_max, mode):
@@ -95,7 +95,7 @@ def search_beatmaps(star_min, star_max, mode):
 
 
 # =================================================
-# UI Helpers (guarded)
+# UI Helpers 
 # =================================================
 
 
@@ -119,23 +119,20 @@ def create_beatmap_card(parent, bm):
     def select_card():
         global selected_card, selected_map_url
 
-        # Un-highlight previous selection
         if selected_card is not None:
             selected_card.configure(border_width=0)
 
-        # Highlight this card
+        # Highlight 
         card.configure(border_width=2, border_color="#ff66aa")
 
         selected_card = card
         selected_map_url = f"https://osu.ppy.sh/beatmapsets/{bm['id']}"
 
-    # ---- Cover image ----
     cover_img = load_cover(bm["covers"]["list@2x"])
     cover = ctk.CTkLabel(card, image=cover_img, text="")
     cover.image = cover_img
     cover.pack(side="left", padx=14, pady=14)
 
-    # ---- Text ----
     text_frame = ctk.CTkFrame(card)
     text_frame.pack(side="left", fill="both", expand=True, padx=(4, 12), pady=10)
 
@@ -227,7 +224,7 @@ def on_search_clicked():
 
 
 # =================================================
-# App UI (clean spacing)
+# App UI 
 # =================================================
 
 ctk.set_appearance_mode("dark")
@@ -246,7 +243,7 @@ except Exception:
     pass  # fails silently on non-Windows platforms
 
 
-# --- Top Controls ---
+# --- Top ---
 top_frame = ctk.CTkFrame(app)
 top_frame.pack(fill="x", padx=24, pady=20)
 
