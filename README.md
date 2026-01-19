@@ -44,110 +44,88 @@ osu-reco/
 ├── README.md
 ├── osu_reco.ico          # Application icon
 └── .gitignore
+```
 
-Installation and Setup
-Step 1: Clone the repository
+## Installation
+
+### Step 1: Clone the repository
+
+```bash
 git clone https://github.com/yourusername/osu-reco.git
 cd osu-reco
+```
+### Step 2: Create a virtual environment (recommended)
 
-Step 2: Create a virtual environment (recommended)
+```bash
 python -m venv venv
-
-
+```
 Activate it:
 
-Windows
+Windows:
 
+```bash
 venv\Scripts\activate
+```
 
+MacOS/Linux:
 
-macOS / Linux
-
+```bash
 source venv/bin/activate
+```
 
-Step 3: Install dependencies
+### Step 3: Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-osu! API Setup (Required)
+### osu! API Setup (Required)
 
 This application uses the official osu! API v2 and requires OAuth credentials.
 
-Step 4: Create an osu! OAuth application
+### Step 4: Create an osu! OAuth application
 
-Log in to your osu! account
-
-Go to: https://osu.ppy.sh/home/account/edit
-
-Scroll to the OAuth Applications section
-
-Create a new application
-
-Set the application type to Confidential
-
-The redirect URL is not used and can be set to any valid URL
+1. Log in to your osu! account
+2. Go to https://osu.ppy.sh/home/account/edit
+3. Scroll to the OAuth Applications section
+4. Create a new application
+5. Set the application type to Confidential
+6. The redirect URL is not used and can be set to any valid URL
 
 You will receive:
 
-Client ID
+-> Client ID
+-> Client Secret
 
-Client Secret
-
-Step 5: Create your local config file
+### Step 3: Create your local config file
 
 Copy the example configuration file:
 
+```bash
 cp config.example.json config.json
-
-
+```
 Open config.json and insert your credentials:
 
+```json
 {
     "client_id": "YOUR_CLIENT_ID",
     "client_secret": "YOUR_CLIENT_SECRET",
     "access_token": "",
     "token_expiry": 0
 }
+```
 
-
-Important:
-
-config.json must NOT be committed
-
-It is ignored automatically via .gitignore
-
-Running the Application
+### Running the Application
 
 From the project directory, with your virtual environment activated:
 
+```bash
 python main.py
-
-
+```
 The application window should open.
 
-How the Application Works
 
-Enter your global osu! rank manually
 
-Select the desired game mode
 
-The app converts your rank into a recommended star difficulty range
 
-Ranked beatmaps are fetched from the osu! API within that range
 
-Results are displayed as selectable cards
-
-Select a beatmap and click “Open Selected Map in Browser” to view it on osu!
-
-The difficulty model is intentionally piecewise to avoid unrealistic jumps in difficulty and better match real player experience.
-
-Security Notes
-
-config.json is excluded from version control
-
-OAuth access tokens are stored locally only
-
-No user data is collected or transmitted beyond osu! API requests
-
-Known Limitations
-
-Rank must current
