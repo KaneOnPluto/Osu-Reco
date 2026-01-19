@@ -1,4 +1,3 @@
-# osu_auth.py
 import requests
 import time
 import json
@@ -42,3 +41,4 @@ def get_access_token():
 
     save_config(config)
     return config["access_token"]
+
