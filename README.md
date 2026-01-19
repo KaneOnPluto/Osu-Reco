@@ -4,6 +4,8 @@ Osu! Reco is an open-source desktop application that recommends ranked osu! beat
 
 Instead of relying on a simple logarithmic approximation, the application uses a custom piecewise difficulty model designed to better reflect real player progression. Beatmaps are fetched directly from the official osu! API v2 and displayed in a clean, card-based interface with cover images.
 
+There are many issues with this, feel free to help out, or don't, I'll keep working on it!
+
 ---
 
 ## Features
