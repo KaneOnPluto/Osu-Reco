@@ -53,7 +53,7 @@ osu-reco/
 ### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/osu-reco.git
+git clone https://github.com/KaneOnPluto/osu-reco.git
 cd osu-reco
 ```
 ### Step 2: Create a virtual environment (recommended)
